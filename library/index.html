@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/atomic/variables.css">
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <div class="main-container">
+        <header class="page-header">
+            <h1>Painel Administrativo</h1>
+            <a href="/catalogo.html" class="nav-link">Ver Catálogo Público</a>
+        </header>
+
+        <main class="admin-content">
+            <div class="form-container">
+                <h2>Gerenciar Livros</h2>
+                <form id="bookForm">
+                    <input type="hidden" id="bookId">
+                    <div class="form-group">
+                        <label for="bookTitle">Título:</label>
+                        <input type="text" id="bookTitle" placeholder="Digite o título do livro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookAuthor">Autor:</label>
+                        <input type="text" id="bookAuthor" placeholder="Digite o nome do autor" required>
+                    </div>
+                    <div id="book-modal" class="modal-overlay">
+                        <div class="modal-content">
+                            <button id="close-modal" class="close-modal">&times;</button>
+                            <h2 id="modal-title"></h2>
+                            <p id="modal-author"></p>
+                            <p id="modal-description"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookDescription">Descrição (Sinopse):</label>
+                        <textarea id="bookDescription" rows="4" placeholder="Digite a sinopse do livro..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Adicionar Livro</button>
+                        <button type="button" class="btn btn-secondary" id="cancelUpdate" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table class="table-admin">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-table-body"></tbody>
+                </table>
+            </div>
+            <body>
+            
+                <script src="catalogo.js"></script>
+            </body>
+            
+            <div class="form-actions">
+        </main>
+    </div>
+
+    <script src="/admin.js"></script>
+</body>
+</html>
